@@ -7,7 +7,6 @@ export const ReviewList = () => {
 
   useEffect(() => {
     fetchAllReviews().then((reviews) => {
-      console.log(reviews);
       setReviewList(reviews);
       setIsLoading(false);
     });
@@ -17,12 +16,21 @@ export const ReviewList = () => {
 
   return (
     <>
-      <h2>Reviews</h2>
+      <h2 id="reviewsHeading">Reviews</h2>
+
       <ul>
         {reviewList.map((review) => {
           return (
-            <li key={review.review_id}>
-              <h3>{review.title}</h3>
+            <li className="reviewList" key={review.review_id}>
+              <h3>Title: {review.title}</h3>
+              <img
+                className="images"
+                src={review.review_img_url}
+                alt={review.title}
+              ></img>
+              <p>
+                Votes: <b>{review.votes}</b>
+              </p>
             </li>
           );
         })}

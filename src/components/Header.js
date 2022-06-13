@@ -6,7 +6,7 @@ export const Header = () => {
       <Nav />
       <header>
         <h1>Games of Grace</h1>
-        <h2>Hello, user!</h2>
+        <p id="greeting">Hello, user! 👋 </p>
       </header>
     </>
   );
