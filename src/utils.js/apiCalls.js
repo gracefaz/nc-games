@@ -25,6 +25,14 @@ export const fetchReviewsByCategory = (categoryFilter) => {
     .then((response) => response.data.reviews);
 };
 
+export const fetchReviewById = (review_id) => {
+  console.log(review_id);
+  return ncGamesAPI.get(`/reviews/${review_id}`).then((response) => {
+    console.log(response.data.review);
+    return response.data.review;
+  });
+};
+
 // export const fetchItemsByCategory = (categoryFilter) => {
 //   return ncMarketplaceApi
 //     .get(`api/items/?category_name=${categoryFilter}`)

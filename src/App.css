@@ -10,6 +10,7 @@
 
 .title {
   text-transform: capitalize;
+  margin: 10px;
 }
 
 img {
@@ -84,6 +85,34 @@ h2 {
 
 .dropDownOptions {
   text-transform: capitalize;
+}
+
+.buttons {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  background-color: rgb(149, 97, 149);
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  border: white;
+  margin: 20px;
+}
+
+.buttons:hover {
+  background-color: white;
+  color: rgb(149, 97, 149);
+}
+
+#reviewBody {
+  margin: 10px;
+}
+
+.singleReviewPage {
+  color: rgb(90, 1, 90);
+}
+
+.reviewCards {
+  background-color: rgb(80, 104, 84);
 }
 
 @media only screen and (min-width: 1100px) {
