@@ -7,10 +7,13 @@
   text-align: center;
 }
 
+img {
+  max-width: 70%;
+  margin: 30px;
+}
+
 .images {
-  width: 70%;
-  height: 50%;
-  margin: 20px;
+  width: 50%;
 }
 
 .reviewList {
@@ -54,4 +57,10 @@ h1 {
 
 #reviewsHeading {
   margin: 20px;
+}
+
+@media only screen and (min-width: 1100px) {
+  .images {
+    width: 50%;
+  }
 }
