@@ -58,7 +58,7 @@ h1 {
   font-size: 400%;
   color: rgb(219, 186, 219);
   background-color: rgb(80, 104, 84);
-  padding: 10px;
+  padding: 20px;
 }
 
 h2 {
@@ -73,7 +73,7 @@ h2 {
   color: rgb(219, 186, 219);
   font-size: 125%;
   background-color: rgb(80, 104, 84);
-  padding: 10px;
+  padding: 15px;
 }
 
 #reviewsHeading {
