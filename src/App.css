@@ -10,6 +10,7 @@
 
 .title {
   text-transform: capitalize;
+  margin: 10px;
 }
 
 img {
@@ -22,7 +23,8 @@ img {
 }
 
 .reviewList {
-  margin: 30px;
+  margin: 50px;
+  padding: 20px;
   list-style: none;
   color: rgb(90, 1, 90);
 }
@@ -47,27 +49,31 @@ img {
 }
 
 .topnav a:hover {
-  background-color: rgb(90, 1, 90);
-  color: rgb(149, 97, 149);
+  background-color: rgb(219, 186, 219);
+  color: rgb(90, 1, 90);
 }
 
 h1 {
-  margin: 30px;
   font-family: "Fascinate", cursive;
   font-size: 400%;
-  color: rgb(90, 1, 90);
+  color: rgb(219, 186, 219);
+  background-color: rgb(80, 104, 84);
+  padding: 10px;
 }
 
 h2 {
   font-family: "Fascinate", cursive;
   color: rgb(90, 1, 90);
   font-size: 250%;
+  padding: 10px;
 }
 
 #greeting {
-  margin: 10px;
   font-family: "Kanit", sans-serif;
-  color: rgb(90, 1, 90);
+  color: rgb(219, 186, 219);
+  font-size: 125%;
+  background-color: rgb(80, 104, 84);
+  padding: 10px;
 }
 
 #reviewsHeading {
@@ -84,6 +90,34 @@ h2 {
 
 .dropDownOptions {
   text-transform: capitalize;
+}
+
+.buttons {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  background-color: rgb(149, 97, 149);
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  border: white;
+  margin: 20px;
+}
+
+.buttons:hover {
+  background-color: rgb(219, 186, 219);
+  color: rgb(149, 97, 149);
+}
+
+#reviewBody {
+  margin: 10px;
+}
+
+.singleReviewPage {
+  color: rgb(90, 1, 90);
+}
+
+.reviewCards {
+  background-color: rgb(80, 104, 84);
 }
 
 @media only screen and (min-width: 1100px) {
