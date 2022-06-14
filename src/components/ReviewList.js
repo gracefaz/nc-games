@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAllReviews } from "../utils.js/apiCalls";
+import { CategoryDropdown } from "./CategoryDropdown";
 
 export const ReviewList = () => {
   const [reviewList, setReviewList] = useState([]);
@@ -17,7 +18,7 @@ export const ReviewList = () => {
   return (
     <>
       <h2 id="reviewsHeading">Reviews</h2>
-
+      <CategoryDropdown />
       <ul>
         {reviewList.map((review) => {
           return (

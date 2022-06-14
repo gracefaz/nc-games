@@ -12,3 +12,9 @@ export const fetchAllReviews = () => {
       console.log(err);
     });
 };
+
+export const fetchCategoryNames = () => {
+  return ncGamesAPI
+    .get("/categories")
+    .then((response) => response.data.categories);
+};
