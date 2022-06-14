@@ -23,7 +23,11 @@ export const CategoryDropdown = ({ setCategoryFilter }) => {
         </option>
         <option>All</option>
         {categoryNames.map((categoryName) => {
-          return <option key={categoryName.slug}>{categoryName.slug}</option>;
+          return (
+            <option className="dropDownOptions" key={categoryName.slug}>
+              {categoryName.slug}
+            </option>
+          );
         })}
       </select>
     </>

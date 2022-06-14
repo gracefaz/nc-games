@@ -8,9 +8,13 @@
   text-align: center;
 }
 
+.title {
+  text-transform: capitalize;
+}
+
 img {
   max-width: 70%;
-  margin: 30px;
+  margin: 15px;
 }
 
 .images {
@@ -48,7 +52,7 @@ img {
 }
 
 h1 {
-  margin: 20px;
+  margin: 30px;
   font-family: "Fascinate", cursive;
   font-size: 400%;
   color: rgb(90, 1, 90);
@@ -57,6 +61,7 @@ h1 {
 h2 {
   font-family: "Fascinate", cursive;
   color: rgb(90, 1, 90);
+  font-size: 250%;
 }
 
 #greeting {
@@ -75,6 +80,10 @@ h2 {
   border-radius: 20px;
   padding: 10px;
   font-family: "Kanit", sans-serif;
+}
+
+.dropDownOptions {
+  text-transform: capitalize;
 }
 
 @media only screen and (min-width: 1100px) {

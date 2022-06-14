@@ -31,7 +31,7 @@ export const ReviewList = () => {
         {reviewList.map((review) => {
           return (
             <li className="reviewList" key={review.review_id}>
-              <h3>Title: {review.title}</h3>
+              <h3 className="title">Title: {review.title}</h3>
               <img
                 className="images"
                 src={review.review_img_url}
