@@ -17,12 +17,12 @@ export const SingleReview = () => {
 
   const handleVoteClick = () => {
     setCount((currCount) => currCount + 1);
-    patchReviewById(review_id);
+    patchReviewById(review_id, 1);
   };
 
   const handleDeductVoteClick = () => {
     setCount((currCount) => currCount - 1);
-    patchReviewById(review_id);
+    patchReviewById(review_id, -1);
   };
 
   return (
