@@ -2,19 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCommentsByReviewId } from "../utils.js/apiCalls";
 
-// const Expandable = ({ children }) => {
-//     const [isOpen, setIsOpen] = useState(false);
-
-//     const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
-
-//     return (
-//       <div>
-//         <button onClick={toggleOpen}>{isOpen ? 'Close' : 'Open'}</button>
-//         {isOpen && children}
-//       </div>
-//     );
-//   };
-
 export const CommentsList = () => {
   const [comments, setComments] = useState([]);
   const [viewComments, setViewComments] = useState(false);
