@@ -37,3 +37,9 @@ export const patchReviewById = (review_id, countInc) => {
     return response.data.review;
   });
 };
+
+export const fetchCommentsByReviewId = (review_id) => {
+  return ncGamesAPI.get(`/reviews/${review_id}/comments`).then((response) => {
+    return response.data.comments;
+  });
+};

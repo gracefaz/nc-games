@@ -120,6 +120,11 @@ h2 {
   background-color: rgb(80, 104, 84);
 }
 
+.commentsList {
+  margin: 50px;
+  color: rgb(90, 1, 90);
+}
+
 @media only screen and (min-width: 1100px) {
   .images {
     width: 50%;
