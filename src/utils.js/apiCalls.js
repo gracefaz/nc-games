@@ -30,3 +30,10 @@ export const fetchReviewById = (review_id) => {
     return response.data.review;
   });
 };
+
+export const patchReviewById = (review_id, countInc) => {
+  const body = { inc_votes: countInc };
+  return ncGamesAPI.patch(`/reviews/${review_id}`, body).then((response) => {
+    return response.data.review;
+  });
+};
