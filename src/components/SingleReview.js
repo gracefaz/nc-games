@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchReviewById } from "../utils.js/apiCalls";
+import { fetchReviewById, patchReviewById } from "../utils.js/apiCalls";
 
 export const SingleReview = () => {
   const [review, setReview] = useState({});
+  const [count, setCount] = useState(0);
+  // const [click, setClick] = useState(false);
+
   const { review_id } = useParams();
 
   useEffect(() => {
@@ -11,6 +14,11 @@ export const SingleReview = () => {
       setReview(reviewData);
     });
   }, [review_id]);
+
+  const handleVoteClick = () => {
+    setCount((currCount) => currCount + 1);
+    patchReviewById(review_id);
+  };
 
   return (
     <>
@@ -24,13 +32,20 @@ export const SingleReview = () => {
         ></img>
         <p id="reviewBody">{review.review_body}</p>
         <p>
-          Votes: <b>{review.votes}</b>
+          Votes: <b>{review.votes + count}</b>
         </p>
         <p>
           Comments: <b>{review.comment_count}</b>
         </p>
       </section>
-      <button className="buttons">Vote</button>
+      <button
+        onClick={() => {
+          handleVoteClick();
+        }}
+        className="buttons"
+      >
+        Vote
+      </button>
     </>
   );
 };
