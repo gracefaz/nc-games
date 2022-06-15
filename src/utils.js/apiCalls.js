@@ -34,7 +34,6 @@ export const fetchReviewById = (review_id) => {
 export const patchReviewById = (review_id, countInc) => {
   const body = { inc_votes: countInc };
   return ncGamesAPI.patch(`/reviews/${review_id}`, body).then((response) => {
-    console.log(response.data);
     return response.data.review;
   });
 };

@@ -5,7 +5,6 @@ import { fetchReviewById, patchReviewById } from "../utils.js/apiCalls";
 export const SingleReview = () => {
   const [review, setReview] = useState({});
   const [count, setCount] = useState(0);
-  // const [click, setClick] = useState(false);
 
   const { review_id } = useParams();
 
