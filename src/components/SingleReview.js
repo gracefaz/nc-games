@@ -20,6 +20,11 @@ export const SingleReview = () => {
     patchReviewById(review_id);
   };
 
+  const handleDeductVoteClick = () => {
+    setCount((currCount) => currCount - 1);
+    patchReviewById(review_id);
+  };
+
   return (
     <>
       <section className="singleReviewPage">
@@ -44,7 +49,15 @@ export const SingleReview = () => {
         }}
         className="buttons"
       >
-        Vote
+        Add Vote
+      </button>
+      <button
+        onClick={() => {
+          handleDeductVoteClick();
+        }}
+        className="buttons"
+      >
+        Deduct Vote
       </button>
     </>
   );

@@ -38,7 +38,3 @@ export const patchReviewById = (review_id) => {
     return response.data.review;
   });
 };
-
-export const incVotes = (addVote, setAddVote) => {
-  setAddVote(addVote + 1);
-};
