@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewById, patchReviewById } from "../utils.js/apiCalls";
+import { CommentsList } from "./CommentsList";
 
 export const SingleReview = () => {
   const [review, setReview] = useState({});
@@ -58,6 +59,9 @@ export const SingleReview = () => {
       >
         Deduct Vote
       </button>
+      <p></p>
+
+      <CommentsList />
     </>
   );
 };
