@@ -43,3 +43,14 @@ export const fetchCommentsByReviewId = (review_id) => {
     return response.data.comments;
   });
 };
+
+export const postComment = (review_id, addedComment) => {
+  return ncGamesAPI
+    .post(`/reviews/${review_id}/comments`, {
+      body: addedComment,
+      username: "tickle122",
+    })
+    .then((response) => {
+      return response.data.comment;
+    });
+};

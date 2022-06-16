@@ -109,7 +109,7 @@ h2 {
 }
 
 #reviewBody {
-  margin: 10px;
+  margin: 20px;
 }
 
 .singleReviewPage {
@@ -122,6 +122,27 @@ h2 {
 
 .commentsList {
   margin: 50px;
+  color: rgb(90, 1, 90);
+  background-color: rgb(80, 104, 84);
+  list-style: none;
+  padding: 15px;
+}
+
+#commentBody {
+  padding: 20px;
+}
+
+.form textarea {
+  padding: 15px;
+}
+
+textarea {
+  margin: 10px;
+  border-radius: 30px;
+  color: rgb(149, 97, 149);
+  border-color: rgb(149, 97, 149);
+  font-family: "Kanit", sans-serif;
+  text-align: center;
   color: rgb(90, 1, 90);
 }
 
