@@ -13,15 +13,16 @@ export const CategoryDropdown = ({ setCategoryFilter }) => {
   return (
     <>
       <select
+        defaultValue={"default"}
         onChange={(e) => {
           setCategoryFilter(e.target.value);
         }}
         className="dropDown"
       >
-        <option disabled selected value>
+        <option disabled value="default">
           Choose a Category
         </option>
-        <option>All</option>
+        <option value="">All</option>
         {categoryNames.map((categoryName) => {
           return (
             <option className="dropDownOptions" key={categoryName.slug}>
