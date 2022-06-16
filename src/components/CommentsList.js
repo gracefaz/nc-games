@@ -6,6 +6,7 @@ import { AddComment } from "./AddComment";
 export const CommentsList = () => {
   const [comments, setComments] = useState([]);
   const [viewComments, setViewComments] = useState(false);
+  const [newComment, setNewComment] = useState({});
 
   const { review_id } = useParams();
 
@@ -13,7 +14,7 @@ export const CommentsList = () => {
     fetchCommentsByReviewId(review_id).then((commentData) => {
       setComments(commentData);
     });
-  }, [review_id]);
+  }, [review_id, newComment]);
 
   const handleClickViewComments = () => {
     setViewComments((currState) => {
@@ -44,7 +45,7 @@ export const CommentsList = () => {
           })
         : null}
 
-      {viewComments ? <AddComment /> : null}
+      {viewComments ? <AddComment setNewComment={setNewComment} /> : null}
     </>
   );
 };
