@@ -39,6 +39,7 @@ export const CommentsList = () => {
               <ul>
                 <li key={comment.body} className="commentsList">
                   <p id="commentBody">{comment.body}</p>
+                  <button className="buttons">Delete Comment</button>
                 </li>
               </ul>
             );
