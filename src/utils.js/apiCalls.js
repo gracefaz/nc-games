@@ -58,6 +58,5 @@ export const postComment = (review_id, addedComment) => {
 };
 
 export const deleteComment = (comment_id) => {
-  console.log(comment_id);
   return ncGamesAPI.delete(`/comments/${comment_id}`);
 };

@@ -7,7 +7,6 @@ export const CommentsList = () => {
   const [comments, setComments] = useState([]);
   const [viewComments, setViewComments] = useState(false);
   const [newComment, setNewComment] = useState({});
-  // const [deletedComment, setDeletedComment] = useState([]);
 
   const { review_id } = useParams();
 

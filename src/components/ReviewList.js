@@ -12,21 +12,6 @@ export const ReviewList = () => {
   const [sortByFilter, setSortByFilter] = useState(null);
 
   const { category_id } = useParams();
-  console.log(category_id);
-
-  // useEffect(() => {
-  //   if (categoryFilter === "" || categoryFilter === "All") {
-  //     fetchAllReviews().then((reviews) => {
-  //       setReviewList(reviews);
-  //       setIsLoading(false);
-  //     });
-  //   } else {
-  //     fetchReviewsByCategory(categoryFilter).then((reviews) => {
-  //       setReviewList(reviews);
-  //       setIsLoading(false);
-  //     });
-  //   }
-  // }, [categoryFilter]);
 
   useEffect(() => {
     fetchAllReviews(sortByFilter, category_id).then((reviews) => {
