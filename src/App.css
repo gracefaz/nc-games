@@ -86,6 +86,7 @@ h2 {
   border-radius: 20px;
   padding: 10px;
   font-family: "Kanit", sans-serif;
+  margin: 10px;
 }
 
 .dropDownOptions {
@@ -144,6 +145,17 @@ textarea {
   font-family: "Kanit", sans-serif;
   text-align: center;
   color: rgb(90, 1, 90);
+}
+
+.deleteButtons {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  background-color: rgb(149, 97, 149);
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  border: white;
+  margin: 10px;
 }
 
 @media only screen and (min-width: 1100px) {

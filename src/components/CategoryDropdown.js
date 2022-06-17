@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { fetchCategoryNames } from "../utils.js/apiCalls";
+import { useNavigate } from "react-router-dom";
 
 export const CategoryDropdown = ({ setCategoryFilter }) => {
   const [categoryNames, setCategoryNames] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCategoryNames().then((categoryNamesFromApi) => {
@@ -13,15 +15,16 @@ export const CategoryDropdown = ({ setCategoryFilter }) => {
   return (
     <>
       <select
+        defaultValue={"default"}
         onChange={(e) => {
-          setCategoryFilter(e.target.value);
+          navigate(`/categories/${e.target.value}`);
         }}
         className="dropDown"
       >
-        <option disabled selected value>
+        <option disabled value="default">
           Choose a Category
         </option>
-        <option>All</option>
+        <option value="">All</option>
         {categoryNames.map((categoryName) => {
           return (
             <option className="dropDownOptions" key={categoryName.slug}>

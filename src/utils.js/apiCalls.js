@@ -4,9 +4,11 @@ const ncGamesAPI = axios.create({
   baseURL: "https://games-of-grace.herokuapp.com/api",
 });
 
-export const fetchAllReviews = () => {
+export const fetchAllReviews = (sortByFilter, categoryFilter) => {
   return ncGamesAPI
-    .get("/reviews")
+    .get("/reviews", {
+      params: { sort_by: sortByFilter, category: categoryFilter },
+    })
     .then((response) => response.data.reviews)
     .catch((err) => {
       console.log(err);
@@ -53,4 +55,9 @@ export const postComment = (review_id, addedComment) => {
     .then((response) => {
       return response.data.comment;
     });
+};
+
+export const deleteComment = (comment_id) => {
+  console.log(comment_id);
+  return ncGamesAPI.delete(`/comments/${comment_id}`);
 };
