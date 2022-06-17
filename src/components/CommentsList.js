@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCommentsByReviewId } from "../utils.js/apiCalls";
+import { fetchCommentsByReviewId, deleteComment } from "../utils.js/apiCalls";
 import { AddComment } from "./AddComment";
 
 export const CommentsList = () => {
   const [comments, setComments] = useState([]);
   const [viewComments, setViewComments] = useState(false);
   const [newComment, setNewComment] = useState({});
+  // const [deletedComment, setDeletedComment] = useState([]);
 
   const { review_id } = useParams();
 
@@ -33,18 +34,26 @@ export const CommentsList = () => {
         {viewComments ? "Hide Comments" : "View Comments"}
       </button>
 
-      {viewComments
-        ? comments.map((comment) => {
-            return (
-              <ul>
+      <ul>
+        {viewComments
+          ? comments.map((comment) => {
+              return (
                 <li key={comment.body} className="commentsList">
                   <p id="commentBody">{comment.body}</p>
-                  <button className="buttons">Delete Comment</button>
+                  <button
+                    onClick={() => {
+                      deleteComment(comment.comment_id);
+                      // setComments(comments);
+                    }}
+                    className="buttons"
+                  >
+                    Delete Comment
+                  </button>
                 </li>
-              </ul>
-            );
-          })
-        : null}
+              );
+            })
+          : null}
+      </ul>
 
       {viewComments ? <AddComment setNewComment={setNewComment} /> : null}
     </>

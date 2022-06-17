@@ -1,42 +1,39 @@
 import { useEffect, useState } from "react";
-import { fetchAllReviews, fetchReviewsByCategory } from "../utils.js/apiCalls";
+import { fetchAllReviews } from "../utils.js/apiCalls";
 import { CategoryDropdown } from "./CategoryDropdown";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
 import { SortBy } from "./SortBy";
 
 export const ReviewList = () => {
   const [reviewList, setReviewList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [categoryFilter, setCategoryFilter] = useState("");
-  const [sortByFilter, setSortByFilter] = useState("");
+  const [sortByFilter, setSortByFilter] = useState(null);
+
+  const { category_id } = useParams();
+  console.log(category_id);
+
+  // useEffect(() => {
+  //   if (categoryFilter === "" || categoryFilter === "All") {
+  //     fetchAllReviews().then((reviews) => {
+  //       setReviewList(reviews);
+  //       setIsLoading(false);
+  //     });
+  //   } else {
+  //     fetchReviewsByCategory(categoryFilter).then((reviews) => {
+  //       setReviewList(reviews);
+  //       setIsLoading(false);
+  //     });
+  //   }
+  // }, [categoryFilter]);
 
   useEffect(() => {
-    if (categoryFilter === "" || categoryFilter === "All") {
-      fetchAllReviews().then((reviews) => {
-        setReviewList(reviews);
-        setIsLoading(false);
-      });
-    } else {
-      fetchReviewsByCategory(categoryFilter).then((reviews) => {
-        setReviewList(reviews);
-        setIsLoading(false);
-      });
-    }
-  }, [categoryFilter]);
-
-  useEffect(() => {
-    if (sortByFilter === "" || sortByFilter === "None") {
-      fetchAllReviews().then((reviews) => {
-        setReviewList(reviews);
-        setIsLoading(false);
-      });
-    } else {
-      fetchAllReviews(sortByFilter).then((reviews) => {
-        setReviewList(reviews);
-        setIsLoading(false);
-      });
-    }
-  }, [sortByFilter]);
+    fetchAllReviews(sortByFilter, category_id).then((reviews) => {
+      setReviewList(reviews);
+      setIsLoading(false);
+    });
+  }, [sortByFilter, category_id]);
 
   if (isLoading) return <p>Loading...</p>;
 
